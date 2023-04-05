@@ -1,5 +1,6 @@
 /**
  * execute anonymous code to efficiently create Trigger_Handler_Bypass__mdt records
+ *  so you don't have to do it manually in the Salesforce UI
  *  for all your non-managed trigger handlers
  */
 // add all your non-managed trigger handler names to this set:
@@ -11,7 +12,7 @@ triggerHandlers.add('MyTriggerHandler3');
 
 for(String triggerHandler : triggerHandlers) {
     Map<String, Object> metadataFieldValueMap = new Map<String, Object>();
-	metadataFieldValueMap.put('Some_Field__c', 'some value'); 
-	CustomMetadataUtils.createCustomMetadata('Some_Custom_Metadata_Obj__mdt', triggerHandler, metadataFieldValueMap);
+	metadataFieldValueMap.put('Active', false); 
+	CustomMetadataUtils.createCustomMetadata('Trigger_Handler_Bypass__mdt', triggerHandler, metadataFieldValueMap);
 }
 
