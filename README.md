@@ -5,9 +5,9 @@ Execute anonymous code to efficiently create Trigger_Handler_Bypass__mdt records
 ```java
 // add all your non-managed trigger handler names to this set:
 Set<String> triggerHandlers = new Set<String>();
-triggerHandlers.add('MyTriggerHandler9');
-triggerHandlers.add('MyTriggerHandler99');
-triggerHandlers.add('MyTriggerHandler999');
+triggerHandlers.add('MyTriggerHandler1');
+triggerHandlers.add('MyTriggerHandler2');
+triggerHandlers.add('MyTriggerHandler3');
 //... and so on...
 
 List<Metadata.CustomMetadata> allMetadatas = new List<Metadata.CustomMetadata>();
