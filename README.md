@@ -5,14 +5,14 @@ Execute anonymous code to efficiently create Trigger_Handler_Bypass__mdt records
 ```java
 // add all your non-managed trigger handler names to this set:
 Set<String> triggerHandlers = new Set<String>();
-triggerHandlers.add('MyTriggerHandler1');
-triggerHandlers.add('MyTriggerHandler2');
-triggerHandlers.add('MyTriggerHandler3');
+triggerHandlers.add('MyTriggerHandler9');
+triggerHandlers.add('MyTriggerHandler99');
+triggerHandlers.add('MyTriggerHandler999');
 //... and so on...
 
+List<Metadata.CustomMetadata> allMetadatas = new List<Metadata.CustomMetadata>();
 for(String triggerHandler : triggerHandlers) {
-    List<Metadata.CustomMetadata> allMetadatas = new List<Metadata.CustomMetadata>();
-    allMetadatas.add(DeployCustomMetadata.createMetadataInstance('Trigger_Handler_Bypass', triggerHandler, triggerHandler, new Map<String, Object>             {'Active__c'=> false}));
-    DeployCustomMetadata.deployMetadata(allMetadatas);
+    allMetadatas.add(DeployCustomMetadata.createMetadataInstance('Trigger_Handler_Bypass', triggerHandler, triggerHandler, new Map<String, Object>{'Active__c'=> false}));
 }
+DeployCustomMetadata.deployMetadata(allMetadatas);
 ```
