@@ -11,8 +11,14 @@ triggerHandlers.add('MyTriggerHandler999');
 //... and so on...
 
 List<Metadata.CustomMetadata> allMetadatas = new List<Metadata.CustomMetadata>();
-for(String triggerHandler : triggerHandlers) {
-    allMetadatas.add(DeployCustomMetadata.createMetadataInstance('Trigger_Handler_Bypass', triggerHandler, triggerHandler, new Map<String, Object>{'Active__c'=> false}));
+for (String triggerHandler : triggerHandlers) {
+  allMetadatas.add(
+    DeployCustomMetadata.createMetadataInstance(
+      'Trigger_Handler_Bypass',
+      triggerHandler,
+      triggerHandler,
+      new Map<String, Object>{ 'Active__c' => false }
+    )
+  );
 }
-DeployCustomMetadata.deployMetadata(allMetadatas);
 ```
