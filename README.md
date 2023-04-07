@@ -11,8 +11,8 @@ triggerHandlers.add('MyTriggerHandler3');
 //... and so on...
 
 for(String triggerHandler : triggerHandlers) {
-    Map<String, Object> metadataFieldValueMap = new Map<String, Object>();
-    metadataFieldValueMap.put('Active', false); 
-    CustomMetadataUtils.createCustomMetadata('Trigger_Handler_Bypass__mdt', triggerHandler, metadataFieldValueMap);
+    List<Metadata.CustomMetadata> allMetadatas = new List<Metadata.CustomMetadata>();
+    allMetadatas.add(DeployCustomMetadata.createMetadataInstance('Trigger_Handler_Bypass', triggerHandler, triggerHandler, new Map<String, Object>             {'Active__c'=> false}));
+    DeployCustomMetadata.deployMetadata(allMetadatas);
 }
 ```
