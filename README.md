@@ -12,7 +12,7 @@ triggerHandlers.add('MyTriggerHandler3');
 
 for(String triggerHandler : triggerHandlers) {
     Map<String, Object> metadataFieldValueMap = new Map<String, Object>();
-	metadataFieldValueMap.put('Active', false); 
-	CustomMetadataUtils.createCustomMetadata('Trigger_Handler_Bypass__mdt', triggerHandler, metadataFieldValueMap);
+    metadataFieldValueMap.put('Active', false); 
+    CustomMetadataUtils.createCustomMetadata('Trigger_Handler_Bypass__mdt', triggerHandler, metadataFieldValueMap);
 }
 ```
