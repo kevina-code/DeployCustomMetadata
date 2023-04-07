@@ -21,4 +21,5 @@ for (String triggerHandler : triggerHandlers) {
     )
   );
 }
+DeployCustomMetadata.deployMetadata(allMetadatas);
 ```
